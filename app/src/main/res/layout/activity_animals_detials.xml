@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.AnimalsDetials"
+
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:visibility="gone"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        style="@style/parent.contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/relative_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textViewUser"
+                style="@style/viewParent.headerText"
+                android:maxLines="2"
+                android:text="Hello Kapil!"
+                android:layout_marginTop="0dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileCircleImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/text_color_app"
+                android:src="@drawable/default_pic"
+                android:layout_alignParentRight="true" />
+
+
+        </RelativeLayout>
+
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:minHeight="200dp"
+            app:cardCornerRadius="15dp"
+            app:cardPreventCornerOverlap="true"
+            android:layout_marginTop="5dp"
+            android:elevation="10dp"
+            android:layout_below="@+id/relative_top"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/image_mammel"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@drawable/custom_search_news"
+                    android:src="@drawable/android_developer"
+                    android:scaleType="fitXY">
+                </ImageView>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/relative_dec"
+            android:layout_below="@+id/card_headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp">
+
+            <TextView
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:text="Animals"
+                style="@style/viewParent.headerText"/>
+
+            <TextView
+                android:layout_alignParentRight="true"
+                style="@style/viewParent"
+                android:text="See All"
+                android:layout_centerVertical="true"
+                android:textSize="25sp"
+                android:textColor="@color/puzzle_color"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+        <!--remove the below layout with recycler view, use card poplar courses as model for design-->
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_puzzle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_dec"
+            android:layout_marginTop="5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/card_popular_courses"
+            android:layout_above="@+id/navigation"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="?android:attr/windowBackground"
+            android:foreground="?attr/selectableItemBackground"
+            app:menu="@menu/master_bottom_navigation"
+            app:elevation="10dp"
+            app:labelVisibilityMode="labeled"
+            app:itemTextColor="@color/puzzle_color"
+            app:itemBackground="@color/white"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/item_nav"
+        android:theme="@style/AppTheme2"
+        />
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

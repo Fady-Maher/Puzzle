@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/login"
+    tools:context=".ui.Login">
+
+   <com.google.android.material.textfield.TextInputLayout
+       android:id="@+id/edit_email"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="50dp"
+       android:layout_marginEnd="10dp"
+       android:layout_marginStart="10dp"
+       app:counterEnabled="true"
+       app:counterMaxLength="50"
+       android:hint="Email address"
+       android:textColorHint="@color/design_text_color"
+       android:paddingStart="10dp"
+       app:counterTextColor="@color/design_text_color"
+       android:paddingLeft="10dp">
+       <com.google.android.material.textfield.TextInputEditText
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:drawableStart="@drawable/ic_mail"
+           android:drawablePadding="10dp"
+           android:textColor="@color/black"
+           android:inputType="textEmailAddress"
+           android:paddingBottom="10dp"/>
+
+
+   </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/edit_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        app:passwordToggleEnabled="true"
+        app:errorEnabled="true"
+        android:hint="Password"
+        app:passwordToggleTint="@color/design_text_color"
+        android:textColorHint="@color/design_text_color"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/ic_password"
+            android:drawablePadding="10dp"
+            android:textColor="@color/black"
+            android:inputType="textPassword"
+            android:paddingBottom="10dp"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/txt_forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/design_text_color"
+        android:text="Forget password?"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"/>
+
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/btn_login"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@drawable/btn_singin"
+        android:textAllCaps="false"
+        app:spinning_bar_padding="4dp"
+        app:spinning_bar_width="2dp"
+        app:initialCornerAngle="15dp"
+        app:spinning_bar_color="#fff"
+        android:layout_marginTop="15dp"
+        />
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/btn_google"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Login with google"
+        android:paddingLeft="10dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="#126afc"
+        android:drawableStart="@drawable/ic_ui"
+        android:background="@drawable/shape_google"
+        app:spinning_bar_padding="4dp"
+        app:spinning_bar_width="2dp"
+        app:initialCornerAngle="30dp"
+        app:spinning_bar_color="#fff"/>
+
+
+
+</LinearLayout>

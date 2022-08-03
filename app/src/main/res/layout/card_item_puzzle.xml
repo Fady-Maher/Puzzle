@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+
+
+        <TextView
+            android:id="@+id/txt_animal_qes"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Does he have a month?"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_puzzle_yes"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:text="Yes"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/black"
+                android:background="@drawable/btn_corroct"
+                android:layout_gravity="center"
+                />
+
+            <Button
+                android:id="@+id/btn_puzzle_no"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_corroct"
+                android:text="No"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/photo_animal"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                app:cardCornerRadius="15dp"
+                app:cardPreventCornerOverlap="true"
+                android:elevation="10dp"
+                android:layout_marginLeft="30dp"
+                >
+
+                <ImageView
+                    android:id="@+id/img_animal_qes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/custom_search_news"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/lion">
+                </ImageView>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
